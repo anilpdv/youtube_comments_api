@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
 from itertools import islice
 from youtube_comment_downloader import *
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route('/comments/<video_id>')
